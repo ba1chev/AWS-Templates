@@ -16,7 +16,7 @@ and each rule supports its own description and tags.
 
 ```hcl
 module "web_sg" {
-  source = "../../modules/security_group"
+  source = "../../modules/networking/security_group"
 
   name        = "web"
   description = "Web servers"
