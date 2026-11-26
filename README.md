@@ -17,13 +17,13 @@ terraform/
 
 | Module | Description |
 |--------|-------------|
-| [`vpc_module`](terraform/modules/vpc_module) | VPC with public/private subnets, IGW, NAT gateway(s), and route tables |
-| [`security_group_module`](terraform/modules/security_group_module) | Security group with ingress/egress rules as separate resources |
+| [`vpc`](terraform/modules/vpc) | VPC with public/private subnets, IGW, NAT gateway(s), and route tables |
+| [`security_group`](terraform/modules/security_group) | Security group with ingress/egress rules as separate resources |
 
 ## Running the module tests
 
 ```bash
-cd terraform/modules/vpc_module   # or any other module
+cd terraform/modules/vpc   # or any other module
 terraform init
 terraform test
 ```
