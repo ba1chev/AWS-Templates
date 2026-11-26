@@ -15,8 +15,8 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-# Lock files are committed for root configs (examples), not for modules
-terraform/*_module/.terraform.lock.hcl
+# Lock files are committed for root configs (environments), not for modules
+terraform/modules/**/.terraform.lock.hcl
 
 # OS / editors
 .DS_Store
