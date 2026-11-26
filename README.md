@@ -1,18 +1,29 @@
 # AWS-Templates
 
-Reusable templates for AWS infrastructure.
+Reusable templates for the base infrastructure of a classic 3-tier architecture on AWS.
 
-## Terraform
+## Structure
 
-| Path | Description |
-|------|-------------|
-| [`terraform/vpc_module`](terraform/vpc_module) | VPC with public/private subnets, IGW, NAT gateway(s), and route tables |
-| [`terraform/security_group_module`](terraform/security_group_module) | Security group with ingress/egress rules as separate resources |
+```
+terraform/
+├── modules/        # Reusable building blocks
+└── environments/   # Root configurations that compose the modules per environment
+```
 
-### Run the module tests
+- **modules**: self-contained, tested modules. Each one is a single building block of the architecture.
+- **environments**: ready-to-deploy configurations (e.g. `dev`, `prod`) that wire the modules together.
+
+## Modules
+
+| Module | Description |
+|--------|-------------|
+| [`vpc_module`](terraform/modules/vpc_module) | VPC with public/private subnets, IGW, NAT gateway(s), and route tables |
+| [`security_group_module`](terraform/modules/security_group_module) | Security group with ingress/egress rules as separate resources |
+
+## Running the module tests
 
 ```bash
-cd terraform/vpc_module   # or terraform/security_group_module
+cd terraform/modules/vpc_module   # or any other module
 terraform init
 terraform test
 ```
