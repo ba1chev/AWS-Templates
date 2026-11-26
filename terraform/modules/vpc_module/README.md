@@ -14,7 +14,7 @@ Standard VPC with public and private subnets spread across availability zones.
 
 ```hcl
 module "vpc" {
-  source = "../vpc_module"
+  source = "../../modules/vpc_module"
 
   name           = "dev"
   vpc_cidr_block = "10.0.0.0/16"
